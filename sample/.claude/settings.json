@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.sppgardens.com)",
+      "Bash(mkdir -p /Users/trioangle/Desktop/yasartestfiles/sample/assets/css \\\\ *)"
+    ],
+    "additionalDirectories": [
+      "/Users/trioangle/Desktop/yasartestfiles/sample/assets"
+    ]
+  }
+}

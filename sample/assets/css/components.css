@@ -1,0 +1,340 @@
+/* ============================================================
+   AARNA Hall — components.css
+   Reusable UI: buttons, badges, cards, forms
+   ============================================================ */
+
+/* ============================
+   BUTTONS
+   ============================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-8);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 600;
+  line-height: 1;
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+  box-shadow: 0 4px 20px rgba(139, 105, 20, 0.40);
+}
+
+.btn--secondary {
+  background-color: var(--color-accent);
+  color: var(--color-primary-dark);
+  border-color: var(--color-accent);
+}
+
+.btn--secondary:hover,
+.btn--secondary:focus-visible {
+  background-color: var(--color-border);
+  border-color: var(--color-border);
+}
+
+.btn--secondary-outline {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.60);
+}
+
+.btn--secondary-outline:hover,
+.btn--secondary-outline:focus-visible {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: var(--color-white);
+}
+
+.btn--ghost {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn--ghost:hover,
+.btn--ghost:focus-visible {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn--sm {
+  padding: var(--space-2) var(--space-5);
+  font-size: var(--text-sm);
+}
+
+.btn--lg {
+  padding: var(--space-4) var(--space-10);
+  font-size: var(--text-lg);
+}
+
+/* ============================
+   BADGES
+   ============================ */
+
+.badge {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-primary-dark);
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.badge--gold {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.badge--light {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* ============================
+   CARDS
+   ============================ */
+
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Amenity Card */
+.card--amenity {
+  padding: var(--space-8);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.card__icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(139, 105, 20, 0.08);
+  border-radius: var(--radius-lg);
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.card__icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.card__title {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-bottom: var(--space-2);
+}
+
+.card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+/* Event Type Card */
+.card--event {
+  position: relative;
+}
+
+.card--event .card__image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.card--event .card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card--event:hover .card__image img {
+  transform: scale(1.05);
+}
+
+.card--event .card__body {
+  padding: var(--space-6);
+}
+
+/* Testimonial Card */
+.card--testimonial {
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.card__stars {
+  display: flex;
+  gap: var(--space-1);
+  color: var(--color-primary);
+}
+
+.card__stars svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.card__quote {
+  font-size: var(--text-base);
+  color: var(--color-dark);
+  line-height: 1.8;
+  font-style: italic;
+  flex: 1;
+  position: relative;
+  padding-left: var(--space-6);
+}
+
+.card__quote::before {
+  content: '\201C';
+  font-family: var(--font-display);
+  font-size: 4rem;
+  color: var(--color-primary);
+  position: absolute;
+  left: -4px;
+  top: -16px;
+  line-height: 1;
+  opacity: 0.5;
+}
+
+.card__author {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.card__name {
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--color-dark);
+}
+
+.card__meta {
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+
+/* ============================
+   FORMS
+   ============================ */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  color: var(--color-dark);
+  background: var(--color-white);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  width: 100%;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(139, 105, 20, 0.12);
+}
+
+.form-input.is-error,
+.form-select.is-error,
+.form-textarea.is-error {
+  border-color: var(--color-error);
+}
+
+.form-input.is-error:focus,
+.form-select.is-error:focus,
+.form-textarea.is-error:focus {
+  box-shadow: 0 0 0 3px rgba(181, 40, 26, 0.12);
+}
+
+.form-error {
+  font-size: var(--text-xs);
+  color: var(--color-error);
+  min-height: 1em;
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B5D4F' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-4) center;
+  padding-right: var(--space-10);
+  cursor: pointer;
+}

@@ -1,0 +1,454 @@
+/* ============================================================
+   AARNA Hall — responsive.css
+   All media queries (mobile-first: overrides for ≤768px, ≤480px, ≥1536px)
+   ============================================================ */
+
+/* ============================================================
+   NOTE: gallery.html page-hero responsive rules are co-located
+   with the tablet / mobile blocks below.
+   ============================================================ */
+
+/* ============================
+   TABLET  (≤768px)
+   ============================ */
+
+@media (max-width: 768px) {
+
+  /* Navigation — show hamburger, slide-in menu */
+  .nav__toggle {
+    display: flex;
+  }
+
+  .nav__menu {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-surface);
+    padding: var(--space-6) var(--space-6) var(--space-12);
+    transform: translateX(100%);
+    transition: transform var(--transition-base);
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .nav__menu.is-open {
+    transform: translateX(0);
+  }
+
+  .nav__list {
+    flex-direction: column;
+    width: 100%;
+    gap: var(--space-1);
+  }
+
+  /* Force dark text in mobile menu regardless of nav transparency state */
+  .nav__link,
+  .nav--transparent .nav__link {
+    font-size: var(--text-lg);
+    padding: var(--space-4) var(--space-4);
+    width: 100%;
+    color: var(--color-dark) !important;
+    background: transparent !important;
+    border-radius: var(--radius-md);
+  }
+
+  .nav__link:hover,
+  .nav__link.is-active,
+  .nav--transparent .nav__link:hover,
+  .nav--transparent .nav__link.is-active {
+    color: var(--color-primary) !important;
+    background: rgba(139, 105, 20, 0.06) !important;
+  }
+
+  .nav__link--cta,
+  .nav--transparent .nav__link--cta {
+    margin-top: var(--space-4);
+    background: var(--color-primary) !important;
+    color: var(--color-white) !important;
+    text-align: center;
+    padding: var(--space-3) var(--space-8) !important;
+    border-radius: var(--radius-full) !important;
+    width: auto;
+    align-self: flex-start;
+  }
+
+  /* Hero */
+  .hero__headline {
+    font-size: var(--text-5xl);
+  }
+
+  .hero__subheadline {
+    font-size: var(--text-base);
+  }
+
+  .hero__trust {
+    gap: var(--space-4);
+  }
+
+  .hero__trust-divider {
+    display: none;
+  }
+
+  /* Section header */
+  .section-header__title {
+    font-size: var(--text-4xl);
+  }
+
+  /* About */
+  .about-stats {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: var(--space-12);
+  }
+
+  .about-stats__value {
+    font-size: var(--text-4xl);
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  /* Image appears above text on tablet */
+  .about-image {
+    padding-bottom: var(--space-6);
+    padding-right: var(--space-6);
+  }
+
+  .about-image__inner {
+    height: 320px;
+  }
+
+  .about-content__title {
+    font-size: var(--text-4xl);
+  }
+
+  /* Events grid: collapse to 2 columns on tablet */
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .events-grid .card--event {
+    grid-column: span 1;
+  }
+
+  .events-grid .card--event:nth-child(4),
+  .events-grid .card--event:nth-child(5) {
+    grid-column: span 1;
+  }
+
+  /* CTA strip title */
+  .cta-strip__title {
+    font-size: var(--text-4xl);
+  }
+
+  /* Gallery — 2 columns on tablet */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Lightbox nav buttons smaller on tablet */
+  .lightbox__nav {
+    width: 40px;
+    height: 40px;
+  }
+
+  .lightbox__stage {
+    gap: var(--space-2);
+  }
+
+  /* Page hero */
+  .page-hero__title {
+    font-size: var(--text-5xl);
+  }
+
+  /* Testimonials — single column on tablet */
+  .testimonials-track {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  /* FAQ */
+  .faq__question {
+    padding: var(--space-5) var(--space-6);
+  }
+
+  .faq__answer-inner {
+    padding-inline: var(--space-6);
+  }
+
+  .faq__item.is-open .faq__answer-inner {
+    padding-bottom: var(--space-6);
+  }
+
+  .faq__question-text {
+    font-size: var(--text-lg);
+  }
+
+  /* Contact */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  .contact-form-wrap {
+    padding: var(--space-8);
+  }
+
+  /* Footer */
+  .footer__main {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ============================
+   MOBILE  (≤480px)
+   ============================ */
+
+@media (max-width: 480px) {
+
+  .container {
+    padding-inline: var(--space-4);
+  }
+
+  /* Hero */
+  .hero__headline {
+    font-size: var(--text-4xl);
+  }
+
+  .hero__subheadline {
+    font-size: var(--text-sm);
+  }
+
+  .hero__ctas {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero__ctas .btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  /* Hide third trust badge on very small screens to prevent wrap */
+  .hero__trust-item:last-child {
+    display: none;
+  }
+
+  /* Section header */
+  .section-header__title {
+    font-size: var(--text-3xl);
+  }
+
+  /* About */
+  .about-stats__value {
+    font-size: var(--text-3xl);
+  }
+
+  .about-stats__label {
+    font-size: var(--text-xs);
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content__title {
+    font-size: var(--text-3xl);
+  }
+
+  /* Events grid: single column on mobile */
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .events-grid .card--event,
+  .events-grid .card--event:nth-child(4),
+  .events-grid .card--event:nth-child(5) {
+    grid-column: 1 / -1;
+  }
+
+  /* Amenities: 2 per row on mobile */
+  .amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* CTA strip */
+  .cta-strip__title {
+    font-size: var(--text-3xl);
+  }
+
+  /* Parking notice */
+  .parking-notice {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  /* Footer */
+  .footer__main {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Gallery — 1 column on mobile */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item {
+    height: 200px;
+  }
+
+  /* Gallery filters — wrap cleanly */
+  .gallery-filters {
+    gap: var(--space-2);
+  }
+
+  .gallery-filter {
+    font-size: var(--text-xs);
+    padding: var(--space-1) var(--space-4);
+  }
+
+  /* Lightbox — hide side nav on mobile; use keyboard or swipe */
+  .lightbox__nav {
+    display: none;
+  }
+
+  .lightbox__stage {
+    gap: 0;
+  }
+
+  .lightbox__image-wrap {
+    height: clamp(220px, 50vh, 400px);
+  }
+
+  .lightbox__meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+  }
+
+  /* Page hero */
+  .page-hero__title {
+    font-size: var(--text-4xl);
+  }
+
+  .page-hero__sub {
+    font-size: var(--text-base);
+  }
+
+  /* Testimonials CTA — centre and full-width on small screens */
+  .testimonials__cta .btn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  /* FAQ */
+  .faq__question {
+    padding: var(--space-4) var(--space-5);
+  }
+
+  .faq__question-text {
+    font-size: var(--text-base);
+  }
+
+  .faq__answer-inner {
+    padding-inline: var(--space-5);
+  }
+
+  .faq__item.is-open .faq__answer-inner {
+    padding-bottom: var(--space-5);
+  }
+
+  /* Contact form row — single column on mobile */
+  .contact-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-wrap {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+  }
+
+  .contact-form__submit {
+    font-size: var(--text-base);
+    padding: var(--space-4) var(--space-8);
+  }
+
+  /* WhatsApp FAB — icon-only on small screens */
+  .whatsapp-fab__text {
+    display: none;
+  }
+
+  .whatsapp-fab {
+    padding: var(--space-4);
+    width: 52px;
+    height: 52px;
+    justify-content: center;
+  }
+}
+
+/* ============================
+   LARGE DESKTOP  (≥1536px)
+   ============================ */
+
+@media (min-width: 1536px) {
+
+  .hero__headline {
+    font-size: var(--text-7xl);
+  }
+
+  .hero__subheadline {
+    font-size: var(--text-xl);
+  }
+
+  .section-header__title {
+    font-size: var(--text-5xl);
+  }
+
+  .cta-strip__title {
+    font-size: var(--text-5xl);
+  }
+
+  .about-image__inner {
+    height: 560px;
+  }
+
+  .about-content__title {
+    font-size: var(--text-5xl);
+  }
+
+  /* Gallery — 4 columns already; boost item height on large screens */
+  .gallery-item {
+    height: 280px;
+  }
+
+  /* Page hero */
+  .page-hero__title {
+    font-size: var(--text-6xl);
+  }
+
+  /* Contact map taller on large screens */
+  .contact-map {
+    height: 280px;
+  }
+}

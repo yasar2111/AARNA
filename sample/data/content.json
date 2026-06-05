@@ -1,0 +1,72 @@
+{
+  "_note": "Replace all [PLACEHOLDER] values when real content is provided.",
+  "hall": {
+    "name": "AARNA Hall",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "country": "India",
+    "capacity_min": 150,
+    "capacity_max": 200,
+    "guest_rooms": 1,
+    "parking": false,
+    "phone": "[PLACEHOLDER]",
+    "whatsapp": "[PLACEHOLDER]",
+    "email": "[PLACEHOLDER]",
+    "address": "[PLACEHOLDER]",
+    "google_maps_url": "[PLACEHOLDER]",
+    "instagram": "[PLACEHOLDER]",
+    "facebook": "[PLACEHOLDER]",
+    "domain": "[PLACEHOLDER]"
+  },
+  "hero": {
+    "headline": "Chennai's Finest Setting for Your Most Cherished Moments",
+    "subheadline": "An elegant banquet hall crafted for weddings, receptions, and celebrations that deserve the very best.",
+    "cta_primary": "Enquire Now",
+    "cta_secondary": "View Gallery",
+    "trust_badges": [
+      "150–200 Guests",
+      "Chennai",
+      "Weddings & Events"
+    ]
+  },
+  "about": {
+    "label": "About AARNA Hall",
+    "title": "Where Every Celebration Becomes a Memory",
+    "body": "AARNA Hall blends timeless elegance with modern convenience. Nestled in the heart of Chennai, our venue has been the backdrop to hundreds of joyful celebrations — from intimate weddings to vibrant receptions. We believe every event tells a unique story, and we are committed to making yours unforgettable.\n\nWith thoughtful spaces, attentive service, and a dedication to excellence, AARNA Hall offers everything you need to celebrate life's most precious moments in style.",
+    "stats": [
+      { "value": "150–200", "label": "Guest Capacity" },
+      { "value": "1", "label": "Guest Room" },
+      { "value": "[PLACEHOLDER]", "label": "Years of Service" }
+    ]
+  },
+  "events": [
+    { "name": "Weddings", "desc": "From the sacred rituals to the grand reception — AARNA Hall sets the perfect stage for your wedding day." },
+    { "name": "Receptions", "desc": "Celebrate the union with friends and family in an elegant setting designed for joy and togetherness." },
+    { "name": "Naming Ceremonies", "desc": "Welcome your little one into the world with a heartfelt celebration surrounded by loved ones." },
+    { "name": "Birthday Celebrations", "desc": "Make every milestone birthday an unforgettable event in our beautifully appointed hall." },
+    { "name": "Corporate Events", "desc": "From conferences to team gatherings — a professional space that adapts to your business needs." }
+  ],
+  "testimonials": [
+    {
+      "quote": "We hosted our daughter's wedding at AARNA Hall and the experience was simply wonderful. The hall looked beautiful, the staff was attentive, and our guests were very impressed. We couldn't have asked for a better venue.",
+      "name": "Ramesh & Lakshmi K.",
+      "event": "Wedding Reception",
+      "date": "March 2024",
+      "stars": 5
+    },
+    {
+      "quote": "AARNA Hall was the perfect choice for our son's wedding. The capacity was just right for our 180-guest gathering. Clean, elegant, and well-maintained. Highly recommended for any family celebration.",
+      "name": "Suresh Nataraj",
+      "event": "Wedding",
+      "date": "January 2024",
+      "stars": 5
+    },
+    {
+      "quote": "We celebrated our little one's naming ceremony at AARNA Hall and it was a memorable event. The team was helpful in coordinating the arrangements and the hall's ambience added a special touch.",
+      "name": "Priya & Karthik M.",
+      "event": "Naming Ceremony",
+      "date": "November 2023",
+      "stars": 5
+    }
+  ]
+}
