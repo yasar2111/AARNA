@@ -218,6 +218,7 @@ section[id] {
 
 .hero {
   position: relative;
+  z-index: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -343,6 +344,69 @@ section[id] {
   height: 48px;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.45), transparent);
   animation: scrollPulse 2.2s ease-in-out infinite;
+}
+
+/* ============================
+   ONE-TIME HERO INTRO — video → matching end-frame → content
+   See assets/js/hero-intro.js. Sequence:
+   1. .hero--intro-active   — video plays; hero content's own entrance
+      animations are paused (frozen at their pre-animation state), so
+      nothing is visible behind the video.
+   2. .hero--intro-endframe — added on the video's `ended` event; the
+      video fades out while the end-frame photo (sitting at the same
+      layer as .hero__bg, under the existing dark .hero__overlay)
+      fades in, reading as one continuous shot.
+   3. .hero--intro-active is removed once the crossfade finishes,
+      which un-pauses the content animations for their normal
+      staggered fade-in-and-up entrance — .hero--intro-endframe stays
+      on the section, so the end-frame photo remains the hero
+      backdrop (never cuts back to .hero__bg for that visit).
+   ============================ */
+
+.hero__endframe {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-below);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.045);
+  transition: opacity 1.1s ease, transform 1.6s ease;
+}
+
+.hero--intro-endframe .hero__endframe {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero__intro-video {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.hero--intro-active .hero__intro-video {
+  display: block;
+}
+
+.hero--intro-endframe .hero__intro-video {
+  opacity: 0;
+}
+
+.hero--intro-active .hero__badge-top,
+.hero--intro-active .hero__headline,
+.hero--intro-active .hero__subheadline,
+.hero--intro-active .hero__ctas,
+.hero--intro-active .hero__scroll-indicator {
+  animation-play-state: paused;
+  pointer-events: none;
 }
 
 /* Floating stats card — overlaps hero/about boundary */

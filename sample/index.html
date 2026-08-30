@@ -121,14 +121,26 @@
     <!-- ========================================================
          HERO
          ======================================================== -->
-    <section id="hero" class="hero" aria-labelledby="hero-headline">
+    <section id="hero" class="hero hero--intro-active" aria-labelledby="hero-headline">
 
       <img class="hero__bg"
            src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1920"
            alt=""
            aria-hidden="true"
            fetchpriority="high">
+
+      <!-- Matches the intro video's final frame — crossfades in as the
+           video ends so the transition reads as one continuous shot
+           instead of a cut to the hero background above. -->
+      <img class="hero__endframe" id="hero-endframe-img" src="assets/images/hero-endframe.jpg" alt="" aria-hidden="true">
+
       <div class="hero__overlay" aria-hidden="true"></div>
+
+      <!-- Intro video — plays once per page load/tab visit (in-memory
+           only, never persisted). See assets/js/hero-intro.js. -->
+      <video class="hero__intro-video" id="hero-intro-video" muted playsinline preload="none" aria-hidden="true">
+        <source src="assets/videos/hero-intro.mp4" type="video/mp4">
+      </video>
 
       <div class="hero__content container">
         <div class="hero__inner">
