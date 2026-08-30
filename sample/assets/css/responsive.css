@@ -81,6 +81,18 @@
     min-height: 80vh;
   }
 
+  /* The intro video/end-frame are 3:2 (landscape) — on a narrow phone,
+     object-fit:cover still has to crop most of the width away to fill
+     the taller-than-wide frame. Switch to contain on mobile so the
+     full shot (logo + "AARNA HALL" signage) is always visible instead
+     of a zoomed-in crop; the hero's own dark background shows in the
+     resulting letterbox strips, so it reads as intentional, not empty. */
+  .hero__intro-video,
+  .hero__endframe {
+    object-fit: contain;
+    background-color: #1A0F05;
+  }
+
   .hero__headline {
     font-size: var(--text-5xl);
   }
