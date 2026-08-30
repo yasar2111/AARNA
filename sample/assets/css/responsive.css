@@ -71,7 +71,16 @@
     align-self: flex-start;
   }
 
-  /* Hero */
+  /* Hero — shorter than 100vh on mobile so the intro video's 3:2
+     aspect ratio isn't stretched into an extreme portrait crop (100vh
+     on a tall phone screen was forcing a very tight zoom on the
+     video/end-frame). Desktop is untouched — this rule only applies
+     inside this ≤768px block. */
+  .hero,
+  .hero__content {
+    min-height: 80vh;
+  }
+
   .hero__headline {
     font-size: var(--text-5xl);
   }
