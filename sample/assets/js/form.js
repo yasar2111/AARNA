@@ -3,6 +3,10 @@ export function initForm() {
   const success = document.getElementById('form-success');
   if (!form || !success) return;
 
+  const submitBtn = form.querySelector('.contact-form__submit');
+  const submitLabel = submitBtn ? submitBtn.textContent.trim() : 'Send Enquiry';
+  let formNote = form.querySelector('.form-note');
+
   /* ── Validation rules ── */
   const validators = {
     name(val) {
@@ -70,14 +74,90 @@ export function initForm() {
     });
   });
 
-  /* ── Submit ── */
-  form.addEventListener('submit', e => {
+  /* ── Event Card CTAs: Auto-select event type in form ── */
+  document.querySelectorAll('[data-event-type]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const eventType = btn.dataset.eventType;
+      const eventSelect = form.elements['event_type'];
+      if (eventSelect && eventType) {
+        eventSelect.value = eventType;
+        setError(eventSelect, '');
+      }
+    });
+  });
+
+  /* ── Set min date to today ── */
+  const dateField = form.elements['preferred_date'];
+  if (dateField) {
+    const today = new Date().toISOString().split('T')[0];
+    dateField.setAttribute('min', today);
+  }
+
+  /* ── Inline network-error banner (created once, reused) ── */
+  function showFormNote(message) {
+    if (!formNote) {
+      formNote = document.createElement('p');
+      formNote.className = 'form-note';
+      formNote.setAttribute('role', 'alert');
+      form.insertBefore(formNote, submitBtn);
+    }
+    formNote.textContent = message;
+    formNote.hidden = false;
+  }
+
+  function hideFormNote() {
+    if (formNote) formNote.hidden = true;
+  }
+
+  /* ── Submit — posts to FormSubmit.co via the form's own action URL ── */
+  form.addEventListener('submit', async e => {
     e.preventDefault();
     if (!validateAll()) return;
 
-    /* Hide form, show success */
-    form.hidden = true;
-    success.hidden = false;
-    success.focus();
+    hideFormNote();
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+    }
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form),
+      });
+
+      if (!response.ok) throw new Error('Request failed');
+
+      form.hidden = true;
+      success.hidden = false;
+      success.focus();
+    } catch (err) {
+      showFormNote(
+        'Something went wrong sending your enquiry. Please try again, or reach us directly on WhatsApp / phone.'
+      );
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = submitLabel;
+      }
+    }
   });
+
+  /* ── "Send Another Enquiry" reset ── */
+  const resetBtn = success.querySelector('.btn--reset-form');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      form.reset();
+      Object.keys(validators).forEach(name => {
+        const field = form.elements[name];
+        if (field) setError(field, '');
+      });
+      hideFormNote();
+      form.hidden = false;
+      success.hidden = true;
+      const firstInput = form.querySelector('input');
+      if (firstInput) firstInput.focus();
+    });
+  }
 }

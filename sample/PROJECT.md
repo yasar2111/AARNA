@@ -1,8 +1,8 @@
-# AARNA Hall — Project Master Document
+# AARNA — Project Master Document
 
-> **Purpose**: Single source of truth for the entire AARNA Hall static website project.
+> **Purpose**: Single source of truth for the entire AARNA static website project.
 > Keep this file updated after every phase. Never lose context between sessions.
-> Last Updated: Phase 5 Complete (2026-06-05)
+> Last Updated: Phase 8 Full Redesign (2026-08-30)
 
 ---
 
@@ -29,8 +29,8 @@
 
 | Field              | Value                                          |
 |--------------------|------------------------------------------------|
-| Project Name       | AARNA Hall Website                             |
-| Client             | AARNA Hall                                     |
+| Project Name       | AARNA Website                             |
+| Client             | AARNA                                     |
 | Location           | Chennai, Tamil Nadu, India                     |
 | Project Type       | Static Website (HTML + CSS + Vanilla JS)       |
 | Primary Goal       | Generate enquiry leads (WhatsApp, call, form)  |
@@ -44,17 +44,17 @@
 
 | Detail          | Value                        |
 |-----------------|------------------------------|
+| Name            | AARNA                   |
 | Capacity        | 150–200 Guests               |
 | Guest Rooms     | 1 Room                       |
 | Parking         | NOT AVAILABLE                |
 | City            | Chennai                      |
-| Address         | [PLACEHOLDER — to be added]  |
-| Phone           | [PLACEHOLDER — to be added]  |
-| WhatsApp Number | [PLACEHOLDER — to be added]  |
-| Email           | [PLACEHOLDER — to be added]  |
-| Google Maps URL | [PLACEHOLDER — to be added]  |
-| Instagram URL   | [PLACEHOLDER — to be added]  |
-| Facebook URL    | [PLACEHOLDER — to be added]  |
+| Address         | 438, Thiruvottiyur High Rd, Korukkupet, Old Washermanpet, Chennai - 600021 |
+| Phone           | +91 95001 11647              |
+| WhatsApp Number | +91 95001 11647              |
+| Email           | [Available Soon]             |
+| Google Maps URL | Dynamic embed iframe (Korukkupet) |
+| Website Domain  | `aarnahall.in`               |
 
 ### Pending Information (Client to Provide Later)
 
@@ -348,11 +348,11 @@ Modifier:  .card--featured
 
 <!-- Gallery Item (button element — opens lightbox on click) -->
 <button class="gallery-item" data-category="interior"
-        aria-label="AARNA Hall interior — describe the photo">
+        aria-label="AARNA interior — describe the photo">
   <div class="gallery-item__placeholder gallery-item__placeholder--interior-1" aria-hidden="true"></div>
   <span class="gallery-item__label" aria-hidden="true">Hall Interior</span>
   <div class="gallery-item__overlay" aria-hidden="true"><!-- expand SVG --></div>
-  <img class="gallery-item__img" src="path/to/photo.jpg" alt="AARNA Hall interior — describe" loading="lazy">
+  <img class="gallery-item__img" src="path/to/photo.jpg" alt="AARNA interior — describe" loading="lazy">
 </button>
 <!-- data-category values: interior | stage | dining | entrance | events | decoration -->
 <!-- placeholder class suffix matches category and variation: --interior-1, --stage-2, etc. -->
@@ -484,10 +484,10 @@ Image column:
   → Add background-image: url() to .about-image__inner when real photo is provided
 
 Text column:
-  Eyebrow row:  ✦ ornament (.about-content__ornament) + "About AARNA Hall" label pill
+  Eyebrow row:  ✦ ornament (.about-content__ornament) + "About AARNA" label pill
   H2 title:     "Where Every Celebration Becomes a Memory"
   Gold rule:    .about-content__rule (::after pseudo-element)
-  Para 1:       "AARNA Hall blends timeless elegance with modern convenience. Nestled in the 
+  Para 1:       "AARNA blends timeless elegance with modern convenience. Nestled in the 
                  heart of Chennai, our venue has been the backdrop to hundreds of joyful 
                  celebrations — from intimate weddings to vibrant receptions."
   Para 2:       "We believe every event tells a unique story, and we are committed to making 
@@ -536,12 +536,12 @@ Note: Items 3–10 are placeholder assumptions. Replace or remove when
 ```
 Label:    "Events We Host"
 Title:    "Built for Every Celebration"
-Subtitle: "From sacred rituals to joyful milestones — AARNA Hall sets the perfect stage."
+Subtitle: "From sacred rituals to joyful milestones — AARNA sets the perfect stage."
 Layout:   6-col CSS grid, 3+2 centred (cards 4 & 5 span cols 2–3 of a 6-col row)
 
 Event Cards (each has: gradient bg, SVG icon, badge, h3 title, desc, "Enquire Now" ghost btn):
   1. Weddings           Badge: "Most Popular"       Gradient: gold tones
-     "From the sacred rituals to the grand reception — AARNA Hall sets the perfect stage."
+     "From the sacred rituals to the grand reception — AARNA sets the perfect stage."
   2. Receptions         Badge: "Weddings & More"    Gradient: rose/pink tones
      "Celebrate the union with friends and family in an elegant setting."
   3. Naming Ceremonies  Badge: "Family Milestones"  Gradient: green tones
@@ -558,7 +558,7 @@ Each card's <img src=""> is hidden by CSS when empty; add real photo src to reve
 
 ```
 Label:    "Gallery"
-Title:    "A Glimpse of AARNA Hall"
+Title:    "A Glimpse of AARNA"
 Subtitle: "Every corner of our hall is crafted with attention to detail."
 Layout:   4-col desktop → 2-col tablet → 1-col mobile; uniform height 240px
 
@@ -572,18 +572,18 @@ Filter Tabs (7 buttons with aria-pressed, gold active state, 200ms fade on switc
   data-filter="decoration" → "Decoration"
 
 Gallery Items (12 total — 2 per category, each a <button> for keyboard access):
-  interior-1:   "AARNA Hall interior — spacious banquet hall view"
-  interior-2:   "AARNA Hall interior — elegant hall seating arrangement"
-  stage-1:      "AARNA Hall — beautifully decorated wedding stage"
-  stage-2:      "AARNA Hall — traditional mandap setup for ceremony"
-  dining-1:     "AARNA Hall dining area — guest dining setup"
-  dining-2:     "AARNA Hall dining area — banquet table arrangement"
-  entrance-1:   "AARNA Hall — grand welcoming entrance area"
-  entrance-2:   "AARNA Hall — floral decorated venue entrance"
-  events-1:     "AARNA Hall — vibrant wedding reception event"
-  events-2:     "AARNA Hall — joyful family celebration gathering"
-  decoration-1: "AARNA Hall — elegant floral table decoration"
-  decoration-2: "AARNA Hall — stunning centrepiece decoration"
+  interior-1:   "AARNA interior — spacious banquet hall view"
+  interior-2:   "AARNA interior — elegant hall seating arrangement"
+  stage-1:      "AARNA — beautifully decorated wedding stage"
+  stage-2:      "AARNA — traditional mandap setup for ceremony"
+  dining-1:     "AARNA dining area — guest dining setup"
+  dining-2:     "AARNA dining area — banquet table arrangement"
+  entrance-1:   "AARNA — grand welcoming entrance area"
+  entrance-2:   "AARNA — floral decorated venue entrance"
+  events-1:     "AARNA — vibrant wedding reception event"
+  events-2:     "AARNA — joyful family celebration gathering"
+  decoration-1: "AARNA — elegant floral table decoration"
+  decoration-2: "AARNA — stunning centrepiece decoration"
 
 Gallery footer CTA: "View Full Gallery" → gallery.html (index.html only)
 Image source: CSS-gradient placeholders (12 classes in sections.css); replace img[src] with real .webp/.jpg
@@ -597,7 +597,7 @@ Title:  "Heard From Our Guests"
 Subtitle: "Real experiences from families who celebrated with us."
 
 Testimonial 1:
-  Quote:  "We hosted our daughter's wedding at AARNA Hall and the experience 
+  Quote:  "We hosted our daughter's wedding at AARNA and the experience 
            was simply wonderful. The hall looked beautiful, the staff was 
            attentive, and our guests were very impressed. We couldn't have 
            asked for a better venue."
@@ -607,7 +607,7 @@ Testimonial 1:
   Stars:  5
 
 Testimonial 2:
-  Quote:  "AARNA Hall was the perfect choice for our son's wedding. 
+  Quote:  "AARNA was the perfect choice for our son's wedding. 
            The capacity was just right for our 180-guest gathering. 
            Clean, elegant, and well-maintained. Highly recommended 
            for any family celebration."
@@ -617,7 +617,7 @@ Testimonial 2:
   Stars:  5
 
 Testimonial 3:
-  Quote:  "We celebrated our little one's naming ceremony at AARNA Hall 
+  Quote:  "We celebrated our little one's naming ceremony at AARNA 
            and it was a memorable event. The team was helpful in coordinating 
            the arrangements and the hall's ambience added a special touch."
   Name:   "Priya & Karthik M."
@@ -632,11 +632,11 @@ Testimonial 3:
 Label:  "FAQ"
 Title:  "Frequently Asked Questions"
 
-Q1: What is the seating capacity of AARNA Hall?
-A1: AARNA Hall can comfortably accommodate 150 to 200 guests, making it 
+Q1: What is the seating capacity of AARNA?
+A1: AARNA can comfortably accommodate 150 to 200 guests, making it 
     ideal for intimate weddings, family gatherings, and mid-scale celebrations.
 
-Q2: Is parking available at AARNA Hall?
+Q2: Is parking available at AARNA?
 A2: At present, dedicated on-site parking is not available. However, 
     street parking is accessible in the surrounding area. We recommend 
     that guests arrange their own transportation or use cab services for 
@@ -646,7 +646,7 @@ Q3: Is there a guest room available?
 A3: Yes, we have 1 guest room available for the bridal party or immediate 
     family members to use on the day of the event.
 
-Q4: How do I book AARNA Hall?
+Q4: How do I book AARNA?
 A4: You can reach us via phone, WhatsApp, or by filling out the enquiry 
     form on this page. Our team will get in touch to confirm availability 
     and discuss your requirements.
@@ -662,7 +662,7 @@ A7: We recommend booking at least 3–6 months in advance, especially for
     wedding dates during the peak season (October to February). 
     Early booking ensures your preferred date is secured.
 
-Q8: What types of events does AARNA Hall host?
+Q8: What types of events does AARNA host?
 A8: We host a wide range of events including weddings, receptions, 
     naming ceremonies, birthday celebrations, and corporate events.
 ```
@@ -701,7 +701,7 @@ WhatsApp FAB:
 Logo + Tagline: "Celebrating Life's Greatest Moments"
 Nav Links: Home | About | Amenities | Gallery | Events | Contact
 Contact Snapshot: Phone, Email, Address
-Legal: © 2024 AARNA Hall. All rights reserved.
+Legal: © 2024 AARNA. All rights reserved.
 Social: Instagram | Facebook (links = [PLACEHOLDER])
 ```
 
@@ -722,21 +722,21 @@ Social: Instagram | Facebook (links = [PLACEHOLDER])
 | reception hall Chennai                 | Local  | High     |
 | naming ceremony hall Chennai           | Local  | Medium   |
 | birthday party hall Chennai            | Local  | Medium   |
-| AARNA Hall Chennai                     | Brand  | Critical |
+| AARNA Chennai                     | Brand  | Critical |
 
 ### Meta Tags (index.html)
 
 ```html
-<title>AARNA Hall — Marriage & Event Hall in Chennai | 150–200 Guests</title>
-<meta name="description" content="AARNA Hall is an elegant marriage and event hall 
+<title>AARNA — Marriage & Event Hall in Chennai | 150–200 Guests</title>
+<meta name="description" content="AARNA is an elegant marriage and event hall 
   in Chennai accommodating 150–200 guests. Perfect for weddings, receptions, naming 
   ceremonies and celebrations. Enquire today.">
 <meta name="keywords" content="marriage hall Chennai, event hall Chennai, 
-  wedding venue Chennai, banquet hall Chennai, AARNA Hall">
+  wedding venue Chennai, banquet hall Chennai, AARNA">
 <link rel="canonical" href="https://[DOMAIN]/index.html">
 
 <!-- Open Graph -->
-<meta property="og:title" content="AARNA Hall — Marriage & Event Hall in Chennai">
+<meta property="og:title" content="AARNA — Marriage & Event Hall in Chennai">
 <meta property="og:description" content="An elegant banquet hall for weddings, 
   receptions, and celebrations in Chennai. Capacity: 150–200 guests.">
 <meta property="og:image" content="https://[DOMAIN]/assets/images/hero/hero-bg.jpg">
@@ -746,7 +746,7 @@ Social: Instagram | Facebook (links = [PLACEHOLDER])
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AARNA Hall — Marriage & Event Hall in Chennai">
+<meta name="twitter:title" content="AARNA — Marriage & Event Hall in Chennai">
 <meta name="twitter:description" content="Elegant venue for weddings and events 
   in Chennai. 150–200 guests capacity.">
 ```
@@ -757,7 +757,7 @@ Social: Instagram | Facebook (links = [PLACEHOLDER])
 {
   "@context": "https://schema.org",
   "@type": "EventVenue",
-  "name": "AARNA Hall",
+  "name": "AARNA",
   "description": "An elegant marriage and event hall in Chennai accommodating 150–200 guests.",
   "url": "https://[DOMAIN]",
   "telephone": "[PLACEHOLDER]",
@@ -810,7 +810,7 @@ Social: Instagram | Facebook (links = [PLACEHOLDER])
 - [x] `prefers-reduced-motion` respected for all animations *(in main.css)*
 - [x] Heading hierarchy is strictly sequential (no skipping levels) *(H1 in hero; H2 in section titles; H3 in amenity/event card titles)*
 - [x] `lang="en"` set on `<html>` element *(index.html and gallery.html)*
-- [ ] gallery.html footer uses `<h2 class="footer__heading">` while index.html uses `<h3>` — minor inconsistency, resolve in Phase 6 audit *(see Known Issues #9)*
+- [x] gallery.html footer uses `<h2 class="footer__heading">` while index.html uses `<h3>` — resolved, both now use `<h3>` *(see Known Issues #9)*
 
 ### Performance Rules
 
@@ -1010,8 +1010,9 @@ Social: Instagram | Facebook (links = [PLACEHOLDER])
 | 3     | Gallery                       | ✅ Complete | 2026-06-05        | 12 gradient-placeholder tiles (2×6 categories), filter bar, lightbox (keyboard+Escape+backdrop), gallery.html page, gallery.js ES module, responsive (4→2→1 col) |
 | 4     | Testimonials                  | ✅ Complete | 2026-06-05        | 3 testimonial cards (dark section, gold stars, curly-quote ::before, champagne author name), CTA "Book Your Event", responsive 3-col → 1-col |
 | 5     | FAQ & Contact                 | ✅ Complete | 2026-06-05        | 8-question accordion FAQ (grid-row animation, keyboard Escape, aria-expanded), Contact (2-col: details+map placeholder left, form card right), 6-field form with inline validation, success state |
-| 6     | SEO, Performance & A11y       | ⬜ Pending  | —                 |       |
-| 7     | Final Polish & Docs           | ⬜ Pending  | —                 |       |
+| 6     | SEO, Performance & A11y       | ✅ Complete | 2026-08-03        | Created privacy.html, 404.html, normalised footer heading levels, validated meta & schema |
+| 7     | Final Polish & Docs           | ✅ Complete | 2026-08-03        | Audit navigation, interactive buttons, form reset, maps embed, and master docs complete |
+| 8     | Full Redesign                 | ✅ Complete | 2026-08-30        | Fixed dead JS split (deleted bundle.js), wired contact form to FormSubmit.co, unified branding to AARNA, fixed invalid domain, added real placeholder photography, redesigned all sections on the existing gold/champagne theme |
 
 **Status Key**: ⬜ Pending | 🔄 In Progress | ✅ Complete | 🔁 Needs Revision
 
@@ -1065,20 +1066,20 @@ No CSS changes needed — the grid auto-fills.
 ```html
 <!-- Before (placeholder state) -->
 <button class="gallery-item" data-category="interior"
-        aria-label="AARNA Hall interior — spacious banquet hall view">
+        aria-label="AARNA interior — spacious banquet hall view">
   <div class="gallery-item__placeholder gallery-item__placeholder--interior-1" aria-hidden="true"></div>
   ...
-  <img class="gallery-item__img" src="" alt="AARNA Hall interior — spacious banquet hall view" loading="lazy">
+  <img class="gallery-item__img" src="" alt="AARNA interior — spacious banquet hall view" loading="lazy">
 </button>
 
 <!-- After (real photo added — gradient placeholder auto-hides) -->
 <button class="gallery-item" data-category="interior"
-        aria-label="AARNA Hall interior — spacious banquet hall view">
+        aria-label="AARNA interior — spacious banquet hall view">
   <div class="gallery-item__placeholder gallery-item__placeholder--interior-1" aria-hidden="true"></div>
   ...
   <img class="gallery-item__img"
        src="assets/images/gallery/interior/hall-view-1.webp"
-       alt="AARNA Hall interior — spacious banquet hall view"
+       alt="AARNA interior — spacious banquet hall view"
        loading="lazy">
 </button>
 ```
@@ -1089,7 +1090,7 @@ The CSS rule `.gallery-item__img[src=""] { display: none; }` automatically hides
 Copy an existing `.gallery-item` block and add it to the `.gallery-grid` in both `index.html` and `gallery.html`:
 ```html
 <button class="gallery-item" data-category="interior"
-        aria-label="AARNA Hall interior — [describe the photo]">
+        aria-label="AARNA interior — [describe the photo]">
   <div class="gallery-item__placeholder gallery-item__placeholder--interior-1" aria-hidden="true"></div>
   <span class="gallery-item__label" aria-hidden="true">Hall Interior</span>
   <div class="gallery-item__overlay" aria-hidden="true">
@@ -1097,7 +1098,7 @@ Copy an existing `.gallery-item` block and add it to the `.gallery-grid` in both
       <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
     </svg>
   </div>
-  <img class="gallery-item__img" src="" alt="AARNA Hall interior — [describe the photo]" loading="lazy">
+  <img class="gallery-item__img" src="" alt="AARNA interior — [describe the photo]" loading="lazy">
 </button>
 ```
 No CSS or JS changes needed — the filter and lightbox pick up new items automatically.
@@ -1142,7 +1143,7 @@ Replace the map placeholder `<div>` with:
   allowfullscreen 
   loading="lazy" 
   referrerpolicy="no-referrer-when-downgrade"
-  title="AARNA Hall location on Google Maps">
+  title="AARNA location on Google Maps">
 </iframe>
 ```
 
@@ -1192,8 +1193,10 @@ The current contact form has `action="#"`. When a backend or form service is rea
 | 2026-06-05 | FAQ accordion uses CSS `grid-template-rows: 0fr → 1fr` animation | Smoother than `max-height` trick — no easing overshoot on collapse; no JS height measurement needed |
 | 2026-06-05 | FAQ one-open-at-a-time (not multi-open) | Reduces visual noise; users are answering one question at a time |
 | 2026-06-05 | Contact form uses `novalidate` + custom JS validation | Native browser UI varies by browser/OS; custom errors match the design system |
-| 2026-06-05 | Form success state hides the form and shows a separate `#form-success` div | Cleaner UX than inline banners; clearly communicates the form is done |
-| 2026-06-05 | Contact grid: 1fr : 1.45fr column ratio | Form is the primary CTA — slightly wider column draws attention to it |
+| 2026-08-03 | Confirmed business details (AARNA, Korukkupet address, phone +91 95001 11647, domain aarnahall.in) | Sourced directly from client input |
+| 2026-08-03 | Responsive Google Maps embed integrated | Direct iframe map targeting 438 Thiruvottiyur High Rd, Korukkupet |
+| 2026-08-03 | Created privacy.html page | Resolves 404 on footer privacy policy link |
+| 2026-08-03 | Navigation & form smooth scroll fixes | Guarded empty href targets; added interactive form reset in success view |
 
 ---
 
@@ -1203,13 +1206,18 @@ The current contact form has `action="#"`. When a backend or form service is rea
 |---|----------------------------------------|-------------|----------------|--------------------------------------------------------------------------------|
 | 1 | No real photos available yet           | Open        | —              | Gallery fully functional with gradient placeholders; set `img[src]` when ready |
 | 2 | No logo file provided                  | ✅ Resolved  | —              | Text logo using Cormorant Garamond gold — swap SVG when received               |
-| 3 | Phone/WhatsApp numbers not provided    | Open        | 5 (Contact)    | All links use `[PLACEHOLDER]` — grep `PLACEHOLDER-NUMBER` to replace           |
-| 4 | Address not confirmed                  | Open        | 5, 6           | City-level "Chennai, Tamil Nadu" used throughout                               |
+| 3 | Phone/WhatsApp numbers not provided    | ✅ Resolved  | —              | Updated across all files to +91 95001 11647                                    |
+| 4 | Address not confirmed                  | ✅ Resolved  | —              | Updated to 438, Thiruvottiyur High Rd, Korukkupet, Old Washermanpet, Chennai   |
 | 5 | Catering/decoration policy unknown     | Open        | 5 (FAQ)        | FAQ Q5 and Q6 use `[PLACEHOLDER]` — fill when client confirms                  |
-| 6 | Domain not assigned                    | Open        | 6 (SEO)        | `[DOMAIN]` placeholder in canonical, OG, schema, sitemap, robots               |
+| 6 | Domain not assigned                    | ✅ Resolved  | —              | Assigned `aarnahall.in` in canonical, OG, schema, sitemap, robots              |
 | 7 | Real testimonials not provided         | Open        | 4 ✅ mitigated | 3 realistic placeholder reviews in content.json and index.html (Phases 4 done) |
 | 8 | gallery.html shares identical markup   | By design   | —              | Static site — no templating; both files must be updated when gallery items change |
-| 9 | gallery.html footer uses `<h2>` for footer headings; index.html uses `<h3>` | Open | 6 (A11y audit) | On index.html, h2 is reserved for section titles → footer subheads = h3. On gallery.html there are no h2 section titles so h2 is technically valid but inconsistent. Normalise in Phase 6. |
+| 9 | gallery.html footer uses `<h2>` for footer headings; index.html uses `<h3>` | ✅ Resolved | — | Both pages now consistently use `<h3 class="footer__heading">`. |
+| 10 | `bundle.js` (non-module) was the only script actually loaded by all 4 pages; the documented ES-module chain (`main.js` → `navigation.js`/`gallery.js`/`faq.js`/`form.js`) was never referenced by any `<script>` tag, so edits to those files were silent no-ops | ✅ Resolved | Phase 8 | `bundle.js` deleted; all pages now load `assets/js/main.js` as `type="module"`. |
+| 11 | Contact form had `action="#"` with no backend — every enquiry was silently discarded behind a fake "Thank You" message | ✅ Resolved | Phase 8 | Wired to FormSubmit.co via `fetch()` in `form.js`. Placeholder address `enquiries@aarnahall.in` in `index.html` must be swapped for AARNA's real inbox, and the form submitted once to confirm FormSubmit's activation email. |
+| 12 | Placeholder domain `[old placeholder].in` contained an underscore and was not a valid hostname | ✅ Resolved | Phase 8 | Replaced with `aarnahall.in` across canonical/OG/JSON-LD/robots.txt/sitemap.xml. |
+| 13 | `og:image` pointed at `assets/images/hero/hero-bg.jpg`, a file that doesn't exist in the repo (guaranteed 404) | ✅ Resolved | Phase 8 | Now points at the real hero photo URL used on the page. |
+| 14 | `image.png` (repo root) and `data/content.json` are not referenced by any script | Open | — | Both remain from earlier sessions; `content.json` is kept as an editorial reference only (see its `_note` field). Safe to delete `image.png` if no longer needed. |
 
 ---
 
@@ -1217,13 +1225,36 @@ The current contact form has `action="#"`. When a backend or form service is rea
 
 | Module | Status | Entry Point | Exports | Key DOM Dependencies |
 |--------|--------|-------------|---------|----------------------|
-| `main.js` | ✅ Active | `<script type="module">` in each HTML page | — | Imports navigation.js + gallery.js + faq.js + form.js |
-| `navigation.js` | ✅ Active (Phase 0) | imported by main.js | `initNavigation()` | `#nav`, `#nav-toggle`, `#nav-menu`, `.nav__link`, `.whatsapp-fab` |
-| `gallery.js` | ✅ Active (Phase 3) | imported by main.js | `initGallery()` | `#gallery-grid`, `#lightbox`, `#lightbox-backdrop`, `#lightbox-close`, `#lightbox-prev`, `#lightbox-next`, `#lightbox-img`, `#lightbox-placeholder`, `#lightbox-caption`, `#lightbox-counter`, `.gallery-filter`, `.gallery-item` |
-| `faq.js` | ✅ Active (Phase 5) | imported by main.js | `initFAQ()` | `#faq-list`, `.faq__item`, `.faq__question`, `.faq__answer` |
-| `form.js` | ✅ Active (Phase 5) | imported by main.js | `initForm()` | `#enquiry-form`, `#form-success`, `.form-input`, `.form-select`, `.form-textarea`, `#error-*` spans |
+| `main.js` | ✅ Active | `<script type="module" src="assets/js/main.js">` in each HTML page | — | Imports navigation.js + gallery.js + testimonials.js + faq.js + form.js |
+| `navigation.js` | ✅ Active | imported by main.js | `initNavigation()` | `#nav`, `#nav-toggle`, `#nav-menu`, `.nav__link`, `.whatsapp-fab` |
+| `gallery.js` | ✅ Active | imported by main.js | `initGallery()` | `#gallery-grid`, `#lightbox`, `#lightbox-backdrop`, `#lightbox-close`, `#lightbox-prev`, `#lightbox-next`, `#lightbox-img`, `#lightbox-caption`, `#lightbox-counter`, `.gallery-filter`, `.gallery-item` |
+| `testimonials.js` | ✅ Active (Phase 8) | imported by main.js | `initTestimonials()` | `.testimonials-track`, `.testimonials__arrow--prev`, `.testimonials__arrow--next` |
+| `faq.js` | ✅ Active | imported by main.js | `initFAQ()` | `#faq-list`, `.faq__item`, `.faq__question`, `.faq__answer` |
+| `form.js` | ✅ Active | imported by main.js | `initForm()` | `#enquiry-form`, `#form-success`, `.form-input`, `.form-select`, `.form-textarea`, `#error-*` spans |
 
 **Pattern**: every module exports a single `init*()` function. `main.js` calls all inits after `DOMContentLoaded`. Each `init*()` returns early if its required root DOM element is absent — safe to load `main.js` unchanged on `gallery.html` (no `#enquiry-form`) or any future inner page.
+
+**Historical note (pre Phase 8)**: for a period, every HTML page actually loaded a separate hand-written `assets/js/bundle.js` instead of this ES-module chain, so edits to `navigation.js`/`gallery.js`/`faq.js`/`form.js` had no effect on the live site. `bundle.js` has been deleted and all pages now load `main.js` directly — this table reflects what is actually wired in.
+
+---
+
+## 16. Phase 8 — Full Redesign (2026-08-30)
+
+**Objective**: Visual redesign of the entire site on the existing gold/champagne theme, plus fixes for the critical issues found in the pre-redesign audit.
+
+**What changed**:
+- **JS architecture fixed**: deleted the orphaned `bundle.js`; all 4 HTML pages now load `assets/js/main.js` as a real ES module. `navigation.js` and `faq.js` were already correct and are unchanged; `gallery.js` was simplified to drop the CSS-gradient-placeholder system now that every tile has a real photo; `form.js` now actually submits.
+- **Contact form wired to FormSubmit.co**: `action="https://formsubmit.co/ajax/enquiries@aarnahall.in"`, submitted via `fetch()` in `form.js` with a `_honeypot` spam trap and `_subject`/`_template` config fields. **The placeholder address `enquiries@aarnahall.in` must be replaced with AARNA's real inbox**, and the form must be submitted once in a browser so FormSubmit's one-time activation email can be confirmed — until then submissions will not arrive.
+- **Branding fixed**: the template placeholder name that had leaked into most of the site, plus the separate "AARNA Hall" string hardcoded only in the WhatsApp CTA, are now unified as **AARNA** everywhere.
+- **Domain fixed**: `aarnahall.in` (valid hostname) replaces the underscore-containing placeholder domain in canonical/OG/JSON-LD/robots.txt/sitemap.xml.
+- **Real placeholder photography**: hero, about, all 12 gallery tiles, and all 5 event cards now use real (freely licensed, Unsplash) photos instead of CSS-gradient blocks, picked to match each section's theme. These are stand-ins — swap for real AARNA photography via the `src`/`data-full` attributes whenever it's available; see §11 pattern (same swap mechanism, now pointing at real files instead of empty `src=""`).
+- **Visual redesign**: glass-blur nav with a logo mark, full-bleed hero photo with a floating stats card straddling the hero/about boundary (replaces the old separate hero-trust-badges + about-stats blocks), photo-backed bento grid for Events, redesigned gallery tile hover treatment, testimonials converted from a static 3-up grid to a horizontal scroll-snap carousel with arrow controls, refined FAQ/contact/footer styling. Color tokens in `main.css` are unchanged — same gold `#8B6914` / champagne `#F5E6C8` palette throughout, per client sign-off.
+- **Contrast fixes**: `.footer__copy` and `.card__meta` opacity values raised to clear WCAG AA 4.5:1 (previously ~2.68:1 and ~3.82:1).
+- **Nav consistency fix**: `index.html`'s header previously rendered only a "Contact" link (no Home/About/Amenities/Gallery/Events), unlike the other 3 pages. All 4 pages now share the same full nav.
+- **`og:image` fixed**: previously pointed at a `assets/images/hero/hero-bg.jpg` file that didn't exist anywhere in the repo (guaranteed 404); now points at the real hero photo URL.
+- Canonical / `og:url` reconciled to `https://aarnahall.in/` (root) on the homepage.
+
+**Not in scope for this pass** (still open): `image.png` at the repo root and `data/content.json` remain unreferenced by any script — `content.json` is kept only as an editorial reference copy (see its `_note` field); real AARNA photography, a confirmed business email, and real testimonials are still pending from the client.
 
 ---
 

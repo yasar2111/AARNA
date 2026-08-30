@@ -1,11 +1,11 @@
 /* ============================================================
-   AARNA Hall — main.css
+   AARNA — main.css
    Design tokens, CSS reset, base element styles
    ============================================================ */
 
 /* ---- Design Tokens ---- */
 :root {
-  /* Colours */
+  /* Colours — unchanged brand palette (warm gold / champagne) */
   --color-primary:        #8B6914;
   --color-primary-light:  #C4972A;
   --color-primary-dark:   #5C440C;
@@ -18,6 +18,11 @@
   --color-success:        #2D6A4F;
   --color-error:          #B5281A;
   --color-overlay:        rgba(26, 18, 9, 0.65);
+
+  /* Surfaces added for redesign (glass nav, dark-on-dark cards) */
+  --glass-light:          rgba(253, 250, 245, 0.82);
+  --glass-dark:           rgba(26, 18, 9, 0.55);
+  --shadow-glow:          0 8px 32px rgba(139, 105, 20, 0.28);
 
   /* Typography */
   --font-display: 'Cormorant Garamond', Georgia, serif;
@@ -93,6 +98,9 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: 80px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100%;
 }
 
 body {
@@ -104,6 +112,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100%;
 }
 
 ul[role='list'],

@@ -1,27 +1,23 @@
 export function initNavigation() {
-  const nav     = document.getElementById('nav');
-  const toggle  = document.getElementById('nav-toggle');
-  const menu    = document.getElementById('nav-menu');
+  const nav = document.getElementById('nav');
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('nav-menu');
   const navLinks = menu ? Array.from(menu.querySelectorAll('.nav__link')) : [];
-  const fab      = document.querySelector('.whatsapp-fab');
+  const fab = document.querySelector('.whatsapp-fab');
 
   if (!nav) return;
 
-  /* ---- Nav transparency / scrolled state ---- */
   function updateNavState() {
     const scrolled = window.scrollY > 60;
     nav.classList.toggle('nav--scrolled', scrolled);
     nav.classList.toggle('nav--transparent', !scrolled);
 
     if (fab) {
-      fab.classList.toggle('is-visible', window.scrollY > 300);
+      const hasHero = !!document.getElementById('hero');
+      fab.classList.toggle('is-visible', !hasHero || window.scrollY > 300);
     }
   }
 
-  window.addEventListener('scroll', updateNavState, { passive: true });
-  updateNavState();
-
-  /* ---- Mobile menu toggle ---- */
   function closeMobileMenu() {
     if (!toggle || !menu) return;
     toggle.setAttribute('aria-expanded', 'false');
@@ -30,10 +26,13 @@ export function initNavigation() {
     document.body.style.overflow = '';
   }
 
+  window.addEventListener('scroll', updateNavState, { passive: true });
+  updateNavState();
+
   if (toggle && menu) {
     toggle.addEventListener('click', () => {
       const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-      const next   = !isOpen;
+      const next = !isOpen;
       toggle.setAttribute('aria-expanded', String(next));
       toggle.setAttribute('aria-label', next ? 'Close menu' : 'Open menu');
       menu.classList.toggle('is-open', next);
@@ -50,33 +49,38 @@ export function initNavigation() {
     });
   }
 
-  /* ---- Scroll spy — highlight active section link ---- */
-  const sections = Array.from(document.querySelectorAll('section[id]'));
-
-  function updateActiveLink() {
-    const offset = window.scrollY + 100;
-    let current  = '';
-
-    sections.forEach(section => {
-      if (section.offsetTop <= offset) current = section.id;
-    });
-
-    navLinks.forEach(link => {
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
       const href = link.getAttribute('href');
-      link.classList.toggle('is-active', href === `#${current}`);
-    });
-  }
+      const targetId = href?.slice(1);
+      const target = targetId ? document.getElementById(targetId) : null;
 
-  window.addEventListener('scroll', updateActiveLink, { passive: true });
-  updateActiveLink();
-
-  /* ---- Smooth scroll for all in-page anchors ---- */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const target = document.querySelector(this.getAttribute('href'));
+      closeMobileMenu();
       if (!target) return;
+
       e.preventDefault();
+      if (history.pushState) {
+        history.pushState(null, '', '#' + targetId);
+      } else {
+        window.location.hash = targetId;
+      }
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
+
+  window.addEventListener('hashchange', () => {
+    const target = document.getElementById(window.location.hash.slice(1));
+    if (target) {
+      window.requestAnimationFrame(() => {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+  });
+
+  if (window.location.hash) {
+    const target = document.getElementById(window.location.hash.slice(1));
+    if (target) {
+      setTimeout(() => target.scrollIntoView({ behavior: 'auto', block: 'start' }), 100);
+    }
+  }
 }

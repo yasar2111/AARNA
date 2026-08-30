@@ -1,11 +1,6 @@
 /* ============================================================
-   AARNA Hall — responsive.css
-   All media queries (mobile-first: overrides for ≤768px, ≤480px, ≥1536px)
-   ============================================================ */
-
-/* ============================================================
-   NOTE: gallery.html page-hero responsive rules are co-located
-   with the tablet / mobile blocks below.
+   AARNA — responsive.css
+   All media queries (mobile-first overrides: ≤768px, ≤480px, ≥1536px)
    ============================================================ */
 
 /* ============================
@@ -21,7 +16,7 @@
 
   .nav__menu {
     position: fixed;
-    top: 72px;
+    top: 76px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -46,7 +41,6 @@
     gap: var(--space-1);
   }
 
-  /* Force dark text in mobile menu regardless of nav transparency state */
   .nav__link,
   .nav--transparent .nav__link {
     font-size: var(--text-lg);
@@ -86,12 +80,20 @@
     font-size: var(--text-base);
   }
 
-  .hero__trust {
-    gap: var(--space-4);
+  .hero-stats-float__card {
+    grid-template-columns: 1fr;
   }
 
-  .hero__trust-divider {
+  .hero-stats-float .stat-pill + .stat-pill::before {
     display: none;
+  }
+
+  .hero-stats-float .stat-pill {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .hero-stats-float .stat-pill:last-child {
+    border-bottom: none;
   }
 
   /* Section header */
@@ -100,21 +102,11 @@
   }
 
   /* About */
-  .about-stats {
-    grid-template-columns: repeat(3, 1fr);
-    margin-bottom: var(--space-12);
-  }
-
-  .about-stats__value {
-    font-size: var(--text-4xl);
-  }
-
   .about-grid {
     grid-template-columns: 1fr;
     gap: var(--space-12);
   }
 
-  /* Image appears above text on tablet */
   .about-image {
     padding-bottom: var(--space-6);
     padding-right: var(--space-6);
@@ -128,18 +120,17 @@
     font-size: var(--text-4xl);
   }
 
-  /* Events grid: collapse to 2 columns on tablet */
-  .events-grid {
+  .about-features {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Events bento — collapse to 2 columns */
+  .bento-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .events-grid .card--event {
-    grid-column: span 1;
-  }
-
-  .events-grid .card--event:nth-child(4),
-  .events-grid .card--event:nth-child(5) {
-    grid-column: span 1;
+  .events-grid.bento-grid > .card--event {
+    grid-column: span 1 !important;
   }
 
   /* CTA strip title */
@@ -152,7 +143,34 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Lightbox nav buttons smaller on tablet */
+  /* Visual diary carousel — smaller cards, tighter fan on tablet */
+  .diary-track {
+    height: 320px;
+  }
+
+  .diary-track .gallery-item {
+    width: 190px;
+    height: 240px;
+    margin-top: -120px;
+    margin-left: -95px;
+  }
+
+  .diary-track .gallery-item.diary-pos--l1 {
+    transform: translate(-135px, 12px) rotate(-8deg) scale(0.8);
+  }
+
+  .diary-track .gallery-item.diary-pos--r1 {
+    transform: translate(135px, 12px) rotate(8deg) scale(0.8);
+  }
+
+  .diary-track .gallery-item.diary-pos--l2,
+  .diary-track .gallery-item.diary-pos--r2,
+  .diary-track .gallery-item.diary-pos--l3,
+  .diary-track .gallery-item.diary-pos--r3 {
+    opacity: 0;
+    pointer-events: none;
+  }
+
   .lightbox__nav {
     width: 40px;
     height: 40px;
@@ -167,10 +185,9 @@
     font-size: var(--text-5xl);
   }
 
-  /* Testimonials — single column on tablet */
+  /* Testimonials — one card per view on tablet */
   .testimonials-track {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
+    grid-auto-columns: minmax(260px, 90%);
   }
 
   /* FAQ */
@@ -242,23 +259,17 @@
     justify-content: center;
   }
 
-  /* Hide third trust badge on very small screens to prevent wrap */
-  .hero__trust-item:last-child {
-    display: none;
+  .hero-stats-float .stat-pill {
+    padding: var(--space-6) var(--space-5);
+  }
+
+  .hero-stats-float .stat-pill__value {
+    font-size: var(--text-2xl);
   }
 
   /* Section header */
   .section-header__title {
     font-size: var(--text-3xl);
-  }
-
-  /* About */
-  .about-stats__value {
-    font-size: var(--text-3xl);
-  }
-
-  .about-stats__label {
-    font-size: var(--text-xs);
   }
 
   .about-features {
@@ -269,15 +280,9 @@
     font-size: var(--text-3xl);
   }
 
-  /* Events grid: single column on mobile */
-  .events-grid {
+  /* Events bento — single column on mobile */
+  .bento-grid {
     grid-template-columns: 1fr;
-  }
-
-  .events-grid .card--event,
-  .events-grid .card--event:nth-child(4),
-  .events-grid .card--event:nth-child(5) {
-    grid-column: 1 / -1;
   }
 
   /* Amenities: 2 per row on mobile */
@@ -311,11 +316,30 @@
     grid-template-columns: 1fr;
   }
 
+  /* Visual diary carousel — mostly one card, small peeks of neighbours */
+  .diary-track {
+    height: 300px;
+  }
+
+  .diary-track .gallery-item {
+    width: 220px;
+    height: 260px;
+    margin-top: -130px;
+    margin-left: -110px;
+  }
+
+  .diary-track .gallery-item.diary-pos--l1 {
+    transform: translate(-92px, 10px) rotate(-6deg) scale(0.72);
+  }
+
+  .diary-track .gallery-item.diary-pos--r1 {
+    transform: translate(92px, 10px) rotate(6deg) scale(0.72);
+  }
+
   .gallery-item {
     height: 200px;
   }
 
-  /* Gallery filters — wrap cleanly */
   .gallery-filters {
     gap: var(--space-2);
   }
@@ -345,6 +369,10 @@
   }
 
   /* Page hero */
+  .page-hero {
+    padding-top: 128px;
+  }
+
   .page-hero__title {
     font-size: var(--text-4xl);
   }
@@ -353,7 +381,11 @@
     font-size: var(--text-base);
   }
 
-  /* Testimonials CTA — centre and full-width on small screens */
+  /* Testimonials */
+  .testimonials-track {
+    grid-auto-columns: 100%;
+  }
+
   .testimonials__cta .btn {
     display: block;
     width: 100%;
@@ -437,18 +469,56 @@
     font-size: var(--text-5xl);
   }
 
-  /* Gallery — 4 columns already; boost item height on large screens */
   .gallery-item {
     height: 280px;
   }
 
-  /* Page hero */
   .page-hero__title {
     font-size: var(--text-6xl);
   }
 
-  /* Contact map taller on large screens */
-  .contact-map {
-    height: 280px;
+  .contact-map iframe {
+    min-height: 280px;
+  }
+
+  /* Visual diary carousel — bigger cards, wider fan on large screens */
+  .diary-track {
+    height: 520px;
+    max-width: 1280px;
+  }
+
+  .diary-track .gallery-item {
+    width: 340px;
+    height: 430px;
+    margin-top: -215px;
+    margin-left: -170px;
+  }
+
+  .diary-track .gallery-item.diary-pos--c {
+    transform: translate(0, -28px) rotate(0) scale(1);
+  }
+
+  .diary-track .gallery-item.diary-pos--l1 {
+    transform: translate(-290px, 22px) rotate(-8deg) scale(0.85);
+  }
+
+  .diary-track .gallery-item.diary-pos--r1 {
+    transform: translate(290px, 22px) rotate(8deg) scale(0.85);
+  }
+
+  .diary-track .gallery-item.diary-pos--l2 {
+    transform: translate(-500px, 44px) rotate(-14deg) scale(0.68);
+  }
+
+  .diary-track .gallery-item.diary-pos--r2 {
+    transform: translate(500px, 44px) rotate(14deg) scale(0.68);
+  }
+
+  .diary-track .gallery-item.diary-pos--l3 {
+    transform: translate(-620px, 60px) rotate(-18deg) scale(0.55);
+  }
+
+  .diary-track .gallery-item.diary-pos--r3 {
+    transform: translate(620px, 60px) rotate(18deg) scale(0.55);
   }
 }
