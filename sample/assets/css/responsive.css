@@ -96,8 +96,16 @@
     top: 50%;
     bottom: auto;
     height: 85vw;
-    transform: translateY(-50%);
+    margin-top: -42.5vw; /* half of the 85vw height above — centres the band without touching `transform`, which .hero__endframe's crossfade-zoom animation already uses */
     object-fit: cover;
+  }
+
+  /* .hero__bg is full-height and would otherwise show through above/
+     below the shorter band — hide it for the same duration the band
+     is relevant, so no second, different photo peeks through the gap. */
+  .hero--intro-active .hero__bg,
+  .hero--intro-endframe .hero__bg {
+    opacity: 0;
   }
 
   .hero__headline {
