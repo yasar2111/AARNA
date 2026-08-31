@@ -81,16 +81,23 @@
     min-height: 80vh;
   }
 
-  /* The intro video/end-frame are 3:2 (landscape) — on a narrow phone,
-     object-fit:cover still has to crop most of the width away to fill
-     the taller-than-wide frame. Switch to contain on mobile so the
-     full shot (logo + "AARNA HALL" signage) is always visible instead
-     of a zoomed-in crop; the hero's own dark background shows in the
-     resulting letterbox strips, so it reads as intentional, not empty. */
+  /* The intro video/end-frame are 3:2 (landscape). The hero itself
+     can't get much shorter than ~675px here (its content needs that
+     room), but stretching a 3:2 shot to fill that full height with
+     cover crops most of its width away — and contain (fills by width
+     instead) left big empty bars above/below.
+     Fix: decouple the video/end-frame's own box from the hero's full
+     height — give it a shorter band (proportional to viewport width,
+     close to the video's own ratio) centred in the hero, filled
+     edge-to-edge with cover. That keeps the crop gentle *and* removes
+     the empty bars, without changing the hero content/padding at all. */
   .hero__intro-video,
   .hero__endframe {
-    object-fit: contain;
-    background-color: #1A0F05;
+    top: 50%;
+    bottom: auto;
+    height: 85vw;
+    transform: translateY(-50%);
+    object-fit: cover;
   }
 
   .hero__headline {
