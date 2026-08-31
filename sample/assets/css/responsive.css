@@ -88,15 +88,16 @@
      instead) left big empty bars above/below.
      Fix: decouple the video/end-frame's own box from the hero's full
      height — give it a shorter band (proportional to viewport width,
-     close to the video's own ratio) centred in the hero, filled
-     edge-to-edge with cover. That keeps the crop gentle *and* removes
-     the empty bars, without changing the hero content/padding at all. */
+     close to the video's own ratio), flush against the top of the
+     hero (no gap above it — any leftover space falls below instead),
+     filled edge-to-edge with cover. That keeps the crop gentle *and*
+     removes the empty bars, without changing the hero content/padding
+     at all. */
   .hero__intro-video,
   .hero__endframe {
-    top: 50%;
+    top: 0;
     bottom: auto;
     height: 85vw;
-    margin-top: -42.5vw; /* half of the 85vw height above — centres the band without touching `transform`, which .hero__endframe's crossfade-zoom animation already uses */
     object-fit: cover;
   }
 
