@@ -1,9 +1,15 @@
 // These durations mirror the CSS transitions on .hero__endframe /
-// .hero__intro-video in sections.css. Using fixed timers (instead of
-// waiting on a `transitionend` event) keeps the sequence deterministic
-// even if a transition gets skipped or fires its events out of order.
-const CROSSFADE_DURATION = 1650; // covers the 1.6s end-frame scale/opacity settle
-const CONTENT_REVEAL_DELAY = 350; // a small cinematic beat before content appears
+// .hero__intro-video in sections.css/responsive.css. Using fixed timers
+// (instead of waiting on a `transitionend` event) keeps the sequence
+// deterministic even if a transition gets skipped or fires its events
+// out of order.
+//
+// Mobile (≤768px) uses a shorter, tighter crossfade (~900ms, per the
+// rounded-card treatment in responsive.css) than desktop's slower
+// 1.6s zoom-settle in sections.css — desktop's timing is unchanged.
+const isMobile = window.matchMedia('(max-width: 768px)').matches;
+const CROSSFADE_DURATION = isMobile ? 950 : 1650;
+const CONTENT_REVEAL_DELAY = isMobile ? 200 : 350; // a small cinematic beat before content appears
 
 // In-memory only — deliberately not persisted anywhere (no localStorage/
 // sessionStorage/cookies). This resets whenever the page/tab is freshly

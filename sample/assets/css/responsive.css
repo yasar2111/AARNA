@@ -92,13 +92,24 @@
      hero (no gap above it — any leftover space falls below instead),
      filled edge-to-edge with cover. That keeps the crop gentle *and*
      removes the empty bars, without changing the hero content/padding
-     at all. */
+     at all.
+     While the video/crossfade is active it gets a premium rounded
+     card treatment (radius + soft shadow); once settled on the final
+     end-frame image, both are removed so the image sits full-bleed. */
   .hero__intro-video,
   .hero__endframe {
     top: 0;
     bottom: auto;
     height: 85vw;
     object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+    transition: opacity 950ms ease, transform 950ms ease, border-radius 500ms ease, box-shadow 500ms ease;
+  }
+
+  .hero--intro-done .hero__endframe {
+    border-radius: 0;
+    box-shadow: none;
   }
 
   /* .hero__bg is full-height and would otherwise show through above/
