@@ -1,0 +1,32 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "sample/index.html"
+        ],
+        "createdAt": "2026-09-01T04:12:43.147Z",
+        "reason": "lightbox #lightbox-img is an intentional JS-driven template slot (gallery.js sets .src on open); pre-existing pattern, not touched by this edit"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "sample/gallery.html"
+        ],
+        "createdAt": "2026-09-01T04:17:04.713Z",
+        "reason": "lightbox #lightbox-img is an intentional JS-driven template slot (gallery.js sets .src on open); pre-existing pattern, not touched by this edit"
+      },
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-09-01T04:21:45.152Z",
+        "reason": "client's own PROJECT.md decisions log pins Inter as the body typeface from project start (Phase 0: 'high legibility at small sizes on mobile screens'), paired with Cormorant Garamond for display — a confirmed brand decision, not an AI default"
+      }
+    ]
+  }
+}

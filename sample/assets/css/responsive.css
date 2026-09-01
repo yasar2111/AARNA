@@ -71,53 +71,13 @@
     align-self: flex-start;
   }
 
-  /* Hero — shorter than 100vh on mobile so the intro video's 3:2
-     aspect ratio isn't stretched into an extreme portrait crop (100vh
-     on a tall phone screen was forcing a very tight zoom on the
-     video/end-frame). Desktop is untouched — this rule only applies
-     inside this ≤768px block. */
+  /* Hero — shorter than 100vh on mobile so the hero photo reads as a
+     confident band rather than stretching to fill the whole screen on
+     a tall phone. Desktop is untouched — this rule only applies inside
+     this ≤768px block. */
   .hero,
   .hero__content {
     min-height: 80vh;
-  }
-
-  /* The intro video/end-frame are 3:2 (landscape). The hero itself
-     can't get much shorter than ~675px here (its content needs that
-     room), but stretching a 3:2 shot to fill that full height with
-     cover crops most of its width away — and contain (fills by width
-     instead) left big empty bars above/below.
-     Fix: decouple the video/end-frame's own box from the hero's full
-     height — give it a shorter band (proportional to viewport width,
-     close to the video's own ratio), flush against the top of the
-     hero (no gap above it — any leftover space falls below instead),
-     filled edge-to-edge with cover. That keeps the crop gentle *and*
-     removes the empty bars, without changing the hero content/padding
-     at all.
-     While the video/crossfade is active it gets a premium rounded
-     card treatment (radius + soft shadow); once settled on the final
-     end-frame image, both are removed so the image sits full-bleed. */
-  .hero__intro-video,
-  .hero__endframe {
-    top: 0;
-    bottom: auto;
-    height: 85vw;
-    object-fit: cover;
-    border-radius: 24px;
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
-    transition: opacity 950ms ease, transform 950ms ease, border-radius 500ms ease, box-shadow 500ms ease;
-  }
-
-  .hero--intro-done .hero__endframe {
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  /* .hero__bg is full-height and would otherwise show through above/
-     below the shorter band — hide it for the same duration the band
-     is relevant, so no second, different photo peeks through the gap. */
-  .hero--intro-active .hero__bg,
-  .hero--intro-endframe .hero__bg {
-    opacity: 0;
   }
 
   .hero__headline {
@@ -150,20 +110,6 @@
   }
 
   /* About */
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-12);
-  }
-
-  .about-image {
-    padding-bottom: var(--space-6);
-    padding-right: var(--space-6);
-  }
-
-  .about-image__inner {
-    height: 320px;
-  }
-
   .about-content__title {
     font-size: var(--text-4xl);
   }
@@ -172,13 +118,22 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  /* Events bento — collapse to 2 columns */
-  .bento-grid {
+  .about-gallery {
+    padding: var(--space-6);
+  }
+
+  .about-gallery__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .events-grid.bento-grid > .card--event {
-    grid-column: span 1 !important;
+  /* Package — stack image above details on tablet */
+  .package-panel {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  .package-price__amount {
+    font-size: var(--text-5xl);
   }
 
   /* CTA strip title */
@@ -328,9 +283,22 @@
     font-size: var(--text-3xl);
   }
 
-  /* Events bento — single column on mobile */
-  .bento-grid {
+  /* Package terms strip — stack on narrow phones */
+  .package-terms {
     grid-template-columns: 1fr;
+  }
+
+  .package-terms__item + .package-terms__item::before {
+    display: none;
+  }
+
+  .package-terms__item + .package-terms__item {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .package-cta {
+    width: 100%;
+    text-align: center;
   }
 
   /* Amenities: 2 per row on mobile */
@@ -509,8 +477,8 @@
     font-size: var(--text-5xl);
   }
 
-  .about-image__inner {
-    height: 560px;
+  .about-gallery__item img {
+    height: 220px;
   }
 
   .about-content__title {

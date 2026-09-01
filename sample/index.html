@@ -12,10 +12,17 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://aarnahall.in/">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/images/logo/favicon-512.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo/favicon-16.png">
+  <link rel="apple-touch-icon" href="assets/images/logo/apple-touch-icon.png">
+
   <!-- Open Graph -->
   <meta property="og:title" content="AARNA — Marriage &amp; Event Hall in Chennai">
   <meta property="og:description" content="An elegant banquet hall for weddings, receptions, and celebrations in Chennai. Capacity: 150–200 guests.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&amp;fit=crop&amp;q=80&amp;w=1200">
+  <meta property="og:image" content="https://aarnahall.in/assets/images/hero/aarna-front.webp">
   <meta property="og:url" content="https://aarnahall.in/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_IN">
@@ -24,7 +31,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AARNA — Marriage &amp; Event Hall in Chennai">
   <meta name="twitter:description" content="Elegant venue for weddings and events in Chennai. 150–200 guests capacity.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&amp;fit=crop&amp;q=80&amp;w=1200">
+  <meta name="twitter:image" content="https://aarnahall.in/assets/images/hero/aarna-front.webp">
 
   <!-- Google Fonts — Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -84,10 +91,18 @@
   <header class="nav nav--transparent" id="nav" role="banner">
     <div class="nav__container container">
 
-      <a class="nav__logo" href="index.html" aria-label="AARNA — Go to homepage">
+<a class="nav__logo" href="index.html" aria-label="AARNA — Go to homepage">
+  <span class="nav__logo-mark" aria-hidden="true">
+    <img src="assets/images/logo/favicon-32.png" alt="">
+  </span>
+  <span class="nav__logo-text">AARNA</span>
+</a>
+
+
+      <!-- <a class="nav__logo" href="index.html" aria-label="AARNA — Go to homepage">
         <span class="nav__logo-mark" aria-hidden="true">✦</span>
         <span class="nav__logo-text">AARNA</span>
-      </a>
+      </a> -->
 
       <button
         class="nav__toggle"
@@ -106,7 +121,7 @@
           <li><a class="nav__link" href="#about">About</a></li>
           <li><a class="nav__link" href="#amenities">Amenities</a></li>
           <li><a class="nav__link" href="#gallery">Gallery</a></li>
-          <li><a class="nav__link" href="#events">Events</a></li>
+          <li><a class="nav__link" href="#package">Package</a></li>
           <li><a class="nav__link nav__link--cta" href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -122,26 +137,15 @@
     <!-- ========================================================
          HERO
          ======================================================== -->
-    <section id="hero" class="hero hero--intro-active" aria-labelledby="hero-headline">
+    <section id="hero" class="hero" aria-labelledby="hero-headline">
 
       <img class="hero__bg"
-           src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1920"
+           src="assets/images/hero/aarna-front.webp"
            alt=""
            aria-hidden="true"
            fetchpriority="high">
 
-      <!-- Matches the intro video's final frame — crossfades in as the
-           video ends so the transition reads as one continuous shot
-           instead of a cut to the hero background above. -->
-      <img class="hero__endframe" id="hero-endframe-img" src="assets/images/hero-endframe.jpg" alt="" aria-hidden="true">
-
       <div class="hero__overlay" aria-hidden="true"></div>
-
-      <!-- Intro video — plays once per page load/tab visit (in-memory
-           only, never persisted). See assets/js/hero-intro.js. -->
-      <video class="hero__intro-video" id="hero-intro-video" muted playsinline preload="none" aria-hidden="true">
-        <source src="assets/videos/hero-intro.mp4" type="video/mp4">
-      </video>
 
       <div class="hero__content container">
         <div class="hero__inner">
@@ -211,8 +215,8 @@
             </svg>
           </span>
           <span class="stat-pill__text">
-            <span class="stat-pill__value">5+</span>
-            <span class="stat-pill__label">Event Types Hosted</span>
+            <span class="stat-pill__value">500+</span>
+            <span class="stat-pill__label">Events Hosted</span>
           </span>
         </div>
 
@@ -225,16 +229,7 @@
     <section id="about" class="section" aria-labelledby="about-title">
       <div class="container">
 
-        <div class="about-grid">
-
-          <div class="about-image">
-            <div class="about-image__inner">
-              <img src="https://images.unsplash.com/photo-1522413452208-996ff3f3e740?auto=format&fit=crop&q=80&w=1200"
-                   alt="Elegant table setting inside AARNA banquet hall, Chennai" loading="lazy">
-              <span class="about-image__tag" aria-hidden="true">Premium Venue &nbsp;&middot;&nbsp; Chennai</span>
-            </div>
-          </div>
-
+        <div class="about-intro">
           <div class="about-content">
 
             <div class="about-content__eyebrow">
@@ -263,6 +258,53 @@
 
           </div>
         </div>
+
+        <div class="about-gallery">
+          <div class="about-gallery__grid">
+
+            <figure class="about-gallery__item">
+              <img src="assets/images/about/glimpse-entrance.jpg" alt="Balloon arch and welcome sign at the AARNA Hall entrance" loading="lazy">
+              <figcaption>A Grand Welcome at Our Entrance</figcaption>
+            </figure>
+
+            <figure class="about-gallery__item">
+              <img src="assets/images/about/glimpse-fairy-decor.jpg" alt="A whimsical themed decoration setup at AARNA Hall" loading="lazy">
+              <figcaption>Whimsical Themes, Beautifully Executed</figcaption>
+            </figure>
+
+            <figure class="about-gallery__item">
+              <img src="assets/images/about/glimpse-birthday-stage.jpg" alt="A vibrant birthday stage backdrop with balloons and lighting" loading="lazy">
+              <figcaption>Vibrant Stage Backdrops for Milestone Birthdays</figcaption>
+            </figure>
+
+            <figure class="about-gallery__item">
+              <img src="assets/images/about/glimpse-hall-wide.jpg" alt="The spacious main hall dressed for a celebration, seating rows facing a decorated stage" loading="lazy">
+              <figcaption>Our Spacious Hall, Dressed to Celebrate</figcaption>
+            </figure>
+
+            <figure class="about-gallery__item">
+              <img src="assets/images/about/glimpse-stage-detail.jpg" alt="A close view of a decorated stage with lighting and balloon arch" loading="lazy">
+              <figcaption>Every Detail of the Stage, Perfected</figcaption>
+            </figure>
+
+            <figure class="about-gallery__item">
+              <img src="assets/images/about/glimpse-welcome-board.jpg" alt="An elegant lit welcome board greeting guests at the entrance" loading="lazy">
+              <figcaption>Elegant Welcome Boards for Your Guests</figcaption>
+            </figure>
+
+            <figure class="about-gallery__item">
+              <img src="assets/images/about/glimpse-ceremony-signage.jpg" alt="Personalised signage for a baby ceremony event" loading="lazy">
+              <figcaption>Personalised Signage for Every Ceremony</figcaption>
+            </figure>
+
+            <figure class="about-gallery__item">
+              <img src="assets/images/about/glimpse-dining.jpg" alt="Dining tables and chairs set up and ready for guests" loading="lazy">
+              <figcaption>Dining, Set and Ready for You</figcaption>
+            </figure>
+
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -428,67 +470,57 @@
 
 
     <!-- ========================================================
-         EVENTS SECTION — bento grid
+         PACKAGE SECTION
          ======================================================== -->
-    <section id="events" class="section" aria-labelledby="events-title">
+    <section id="package" class="section" aria-labelledby="package-title">
       <div class="container">
 
         <div class="section-header">
-          <span class="section-header__label">Events We Host</span>
-          <h2 class="section-header__title" id="events-title">Built for Every Celebration</h2>
-          <p class="section-header__subtitle">From sacred rituals to joyful milestones — AARNA sets the perfect stage.</p>
+          <span class="section-header__label">Our Package</span>
+          <h2 class="section-header__title" id="package-title">One Package. Everything Included.</h2>
+          <p class="section-header__subtitle">No hidden add-ons, no surprise bills — just a beautifully hosted celebration from start to finish.</p>
         </div>
 
-        <div class="events-grid bento-grid">
+        <div class="package-panel">
 
-          <div class="card card--event">
-            <img class="card__photo" src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=1200" alt="" loading="lazy">
-            <div class="card__body">
-              <span class="badge">Most Popular</span>
-              <h3 class="card__title">Weddings</h3>
-              <p class="card__desc">From the sacred rituals to the grand reception — AARNA sets the perfect stage for your wedding day.</p>
-              <a href="#contact" class="btn btn--sm btn--ghost card__enquire" data-event-type="wedding">Enquire Now</a>
+          <div class="about-image package-media">
+            <div class="about-image__inner">
+              <img src="assets/images/gallery/aarna-stage.jpg" alt="The decorated stage included in the AARNA Basic Package" loading="lazy">
+              <span class="about-image__tag" aria-hidden="true">AARNA Basic Package</span>
             </div>
           </div>
 
-          <div class="card card--event">
-            <img class="card__photo" src="https://images.unsplash.com/photo-1764269720571-cc09b086c2a4?auto=format&fit=crop&q=80&w=900" alt="" loading="lazy">
-            <div class="card__body">
-              <span class="badge">Weddings &amp; More</span>
-              <h3 class="card__title">Receptions</h3>
-              <p class="card__desc">Celebrate the union with friends and family in an elegant setting.</p>
-              <a href="#contact" class="btn btn--sm btn--ghost card__enquire" data-event-type="reception">Enquire Now</a>
-            </div>
-          </div>
+          <div class="package-info">
 
-          <div class="card card--event">
-            <img class="card__photo" src="https://images.unsplash.com/photo-1770831208268-07daeaa6c6c4?auto=format&fit=crop&q=80&w=900" alt="" loading="lazy">
-            <div class="card__body">
-              <span class="badge">Family Milestones</span>
-              <h3 class="card__title">Naming Ceremonies</h3>
-              <p class="card__desc">Welcome your little one into the world with a heartfelt celebration.</p>
-              <a href="#contact" class="btn btn--sm btn--ghost card__enquire" data-event-type="naming">Enquire Now</a>
-            </div>
-          </div>
+            <p class="package-price">
+              <span class="package-price__amount">₹22,000</span>
+              <span class="package-price__meta">for 5 hours of celebration</span>
+            </p>
 
-          <div class="card card--event">
-            <img class="card__photo" src="https://images.unsplash.com/photo-1771070181476-d4592d83485c?auto=format&fit=crop&q=80&w=900" alt="" loading="lazy">
-            <div class="card__body">
-              <span class="badge">Celebrations</span>
-              <h3 class="card__title">Birthday Celebrations</h3>
-              <p class="card__desc">Make every milestone birthday an unforgettable event.</p>
-              <a href="#contact" class="btn btn--sm btn--ghost card__enquire" data-event-type="birthday">Enquire Now</a>
-            </div>
-          </div>
+            <ul class="package-list">
+              <li><strong>Centralised AC hall &amp; dining</strong> — the full hall and a separate dining area, both air-conditioned, comfortably seating 150–200 guests.</li>
+              <li><strong>Stage, sound &amp; power, sorted</strong> — dedicated stage/mandap setup, a professional sound system, and generator backup, so nothing ever pauses.</li>
+              <li><strong>Basic decoration, done for you</strong> — entrance flower decor, a draped stage backdrop with a centre sofa, chair covers on every seat, and an entrance name board.</li>
+              <li><strong>Spotless, start to finish</strong> — our housekeeping team keeps the hall, dining area, and restrooms clean throughout your event.</li>
+            </ul>
 
-          <div class="card card--event">
-            <img class="card__photo" src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&q=80&w=900" alt="" loading="lazy">
-            <div class="card__body">
-              <span class="badge">Professional</span>
-              <h3 class="card__title">Corporate Events</h3>
-              <p class="card__desc">From conferences to team gatherings — a professional space that adapts.</p>
-              <a href="#contact" class="btn btn--sm btn--ghost card__enquire" data-event-type="corporate">Enquire Now</a>
+            <div class="package-terms">
+              <div class="package-terms__item">
+                <span class="package-terms__value">₹2,000</span>
+                <span class="package-terms__label">Per Extra Hour</span>
+              </div>
+              <div class="package-terms__item">
+                <span class="package-terms__value">₹3,000</span>
+                <span class="package-terms__label">Refundable Deposit</span>
+              </div>
+              <div class="package-terms__item">
+                <span class="package-terms__value">8 AM–11 PM</span>
+                <span class="package-terms__label">Open Every Day</span>
+              </div>
             </div>
+
+            <a href="#contact" class="btn btn--primary btn--lg package-cta">Book This Package</a>
+
           </div>
 
         </div>
@@ -534,10 +566,10 @@
             <img class="gallery-item__img" data-full="https://images.unsplash.com/photo-1522413452208-996ff3f3e740?auto=format&fit=crop&q=85&w=1600" src="https://images.unsplash.com/photo-1522413452208-996ff3f3e740?auto=format&fit=crop&q=75&w=800" alt="AARNA interior — elegant table setting with candles and greenery" loading="lazy">
           </button>
 
-          <button class="gallery-item" data-category="stage" aria-label="AARNA — floral wedding stage arch">
+          <button class="gallery-item" data-category="stage" aria-label="AARNA Hall — decorated stage with floral backdrop">
             <span class="gallery-item__label" aria-hidden="true">Stage &amp; Decor</span>
             <div class="gallery-item__overlay" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-            <img class="gallery-item__img" data-full="https://images.unsplash.com/photo-1641834919507-b0271fe5186b?auto=format&fit=crop&q=85&w=1600" src="https://images.unsplash.com/photo-1641834919507-b0271fe5186b?auto=format&fit=crop&q=75&w=800" alt="AARNA — floral wedding stage arch decoration" loading="lazy">
+            <img class="gallery-item__img" data-full="assets/images/gallery/aarna-stage.jpg" src="assets/images/gallery/aarna-stage.jpg" alt="AARNA Hall — decorated stage with floral backdrop and fairy lights" loading="lazy">
           </button>
 
           <button class="gallery-item" data-category="stage" aria-label="AARNA — decorated hall with draped ceiling">
@@ -546,22 +578,22 @@
             <img class="gallery-item__img" data-full="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=85&w=1600" src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=75&w=800" alt="AARNA — decorated hall with draped ceiling for a celebration" loading="lazy">
           </button>
 
-          <button class="gallery-item" data-category="dining" aria-label="AARNA dining area — floral table setting close-up">
+          <button class="gallery-item" data-category="dining" aria-label="AARNA dining area — table settings ready for guests">
             <span class="gallery-item__label" aria-hidden="true">Dining Area</span>
             <div class="gallery-item__overlay" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-            <img class="gallery-item__img" data-full="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=85&w=1600" src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=75&w=800" alt="AARNA dining area — floral table setting close-up" loading="lazy">
+            <img class="gallery-item__img" data-full="assets/images/gallery/aarna-dining-1.jpg" src="assets/images/gallery/aarna-dining-1.jpg" alt="AARNA Hall dining area — table settings ready for guests" loading="lazy">
           </button>
 
           <button class="gallery-item" data-category="dining" aria-label="AARNA dining area — long banquet table arrangement">
             <span class="gallery-item__label" aria-hidden="true">Dining Area</span>
             <div class="gallery-item__overlay" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-            <img class="gallery-item__img" data-full="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=85&w=1600" src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=75&w=800" alt="AARNA dining area — long banquet table arrangement" loading="lazy">
+            <img class="gallery-item__img" data-full="assets/images/gallery/aarna-dining-2.jpg" src="assets/images/gallery/aarna-dining-2.jpg" alt="AARNA Hall — long banquet dining table arrangement" loading="lazy">
           </button>
 
-          <button class="gallery-item" data-category="entrance" aria-label="AARNA — ceremony seating on the lawn near the entrance">
+          <button class="gallery-item" data-category="entrance" aria-label="AARNA Hall — the entrance at dusk">
             <span class="gallery-item__label" aria-hidden="true">Entrance</span>
             <div class="gallery-item__overlay" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-            <img class="gallery-item__img" data-full="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&q=85&w=1600" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&q=75&w=800" alt="AARNA — floral ceremony seating near the entrance" loading="lazy">
+            <img class="gallery-item__img" data-full="assets/images/gallery/aarna-entrance.webp" src="assets/images/gallery/aarna-entrance.webp" alt="AARNA Hall — the entrance and signage at dusk" loading="lazy">
           </button>
 
           <button class="gallery-item" data-category="entrance" aria-label="AARNA — welcome bar area near the entrance">
@@ -582,10 +614,10 @@
             <img class="gallery-item__img" data-full="https://images.unsplash.com/photo-1764269720571-cc09b086c2a4?auto=format&fit=crop&q=85&w=1600" src="https://images.unsplash.com/photo-1764269720571-cc09b086c2a4?auto=format&fit=crop&q=75&w=800" alt="AARNA — first dance on the reception dance floor" loading="lazy">
           </button>
 
-          <button class="gallery-item" data-category="decoration" aria-label="AARNA — dessert table decoration">
+          <button class="gallery-item" data-category="decoration" aria-label="AARNA — themed decoration setup">
             <span class="gallery-item__label" aria-hidden="true">Decoration</span>
             <div class="gallery-item__overlay" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-            <img class="gallery-item__img" data-full="https://images.unsplash.com/photo-1478146059778-26028b07395a?auto=format&fit=crop&q=85&w=1600" src="https://images.unsplash.com/photo-1478146059778-26028b07395a?auto=format&fit=crop&q=75&w=800" alt="AARNA — dessert table decoration" loading="lazy">
+            <img class="gallery-item__img" data-full="assets/images/gallery/aarna-decoration.jpg" src="assets/images/gallery/aarna-decoration.jpg" alt="AARNA Hall — themed decoration setup for a celebration" loading="lazy">
           </button>
 
           <button class="gallery-item" data-category="decoration" aria-label="AARNA — floral centrepiece and rings detail">
@@ -997,8 +1029,7 @@
 
         <div class="footer__brand">
           <a class="footer__logo" href="index.html" aria-label="AARNA — Home">
-            <span class="footer__logo-mark" aria-hidden="true">✦</span>
-            <span class="footer__logo-text">AARNA</span>
+            <img class="footer__logo-img" src="assets/images/logo/aarna-logo-cropped.png" alt="AARNA Hall">
           </a>
           <p class="footer__tagline">Celebrating Life's Greatest Moments</p>
 
@@ -1025,7 +1056,7 @@
             <li><a class="footer__nav-link" href="#about">About</a></li>
             <li><a class="footer__nav-link" href="#amenities">Amenities</a></li>
             <li><a class="footer__nav-link" href="#gallery">Gallery</a></li>
-            <li><a class="footer__nav-link" href="#events">Events</a></li>
+            <li><a class="footer__nav-link" href="#package">Package</a></li>
             <li><a class="footer__nav-link" href="#contact">Contact</a></li>
           </ul>
         </nav>

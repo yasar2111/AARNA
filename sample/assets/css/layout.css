@@ -126,15 +126,3 @@
 .section--dark .section-header__subtitle {
   color: rgba(255, 255, 255, 0.7);
 }
-
-/* ---- Bento grid utility (events section) ---- */
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: var(--space-6);
-}
-
-.bento-grid > * { grid-column: span 2; }
-.bento-grid > .bento--wide  { grid-column: span 3; }
-.bento-grid > .bento--hero  { grid-column: span 4; }
-.bento-grid > .bento--small { grid-column: span 2; }
