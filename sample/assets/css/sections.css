@@ -904,6 +904,138 @@ section[id] {
   color: var(--color-white);
 }
 
+/* ========================================================
+   INSTAGRAM REELS SECTION
+   ======================================================== */
+
+/* Instagram Reels Horizontal Carousel */
+
+.instagram-reels {
+  background: #faf7f2;
+  overflow: hidden;
+}
+
+.instagram-reels__wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.instagram-reels__track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 10px 4px 20px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.instagram-reels__track::-webkit-scrollbar {
+  display: none;
+}
+
+.instagram-reels__item {
+  flex: 0 0 300px;
+  width: 300px;
+  min-width: 0;
+  scroll-snap-align: start;
+  align-self: flex-start;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(26, 15, 5, 0.08);
+}
+
+.instagram-reels__item .instagram-media {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.reels-arrow {
+  position: absolute;
+  top: 45%;
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  color: #222;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.reels-arrow:hover {
+  background: #ff0038;
+  color: #fff;
+}
+
+.reels-arrow--left {
+  left: -18px;
+}
+
+.reels-arrow--right {
+  right: -18px;
+}
+
+.instagram-reels__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .instagram-reels__item {
+    flex-basis: 270px;
+    width: 270px;
+  }
+
+  .reels-arrow--left {
+    left: 4px;
+  }
+
+  .reels-arrow--right {
+    right: 4px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .instagram-reels__track {
+    gap: 16px;
+    padding: 8px 4px 16px;
+  }
+
+  .instagram-reels__item {
+    flex-basis: min(78vw, 300px);
+    width: min(78vw, 300px);
+  }
+
+  .reels-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .instagram-reels__footer {
+    margin-top: 24px;
+  }
+}
+
+
 
 /* ============================
    VISUAL DIARY CAROUSEL (homepage gallery teaser)
